@@ -1,0 +1,12 @@
+Django>=4.2
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+Pillow
+python-dotenv
+openai
+psycopg2-binary
+reportlab
+moviepy
+imageio-ffmpeg
+google-generativeai

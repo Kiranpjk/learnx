@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend: Install deps",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "& e:/Downloads/delete/modern_learning_platform/backend/.venv/Scripts/Activate.ps1; pip install -r e:/Downloads/delete/modern_learning_platform/backend/requirements.txt"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Run server",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "& e:/Downloads/delete/modern_learning_platform/backend/.venv/Scripts/Activate.ps1; cd e:/Downloads/delete/modern_learning_platform/backend; python manage.py runserver"
+      ],
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch"
+    }
+  ]
+}

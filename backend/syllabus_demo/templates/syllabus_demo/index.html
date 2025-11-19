@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .success { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>This page demonstrates <strong>Unit III (Templates)</strong> and <strong>Unit VI (Sessions)</strong>.</p>
+    
+    <div style="background: #e0f7fa; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+        <h3>Session Demo</h3>
+        <p>You have visited this page <strong>{{ visit_count }}</strong> times.</p>
+        <p><small>(Refresh the page to see the counter increment via Django Sessions)</small></p>
+    </div>
+
+    <h3>Syllabus Checklist</h3>
+    <table>
+        <tr>
+            <th>Unit</th>
+            <th>Topic</th>
+            <th>Status</th>
+        </tr>
+        {% for item in syllabus_units %}
+        <tr>
+            <td>{{ item.unit }}</td>
+            <td>{{ item.name }}</td>
+            <td class="success">{{ item.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

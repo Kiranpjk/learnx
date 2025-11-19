@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #7c3aed;      /* Violet-600 */
+  --secondary: #f59e0b;    /* Amber-500 */
+  --dark: #0f172a;         /* Slate-900 */
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 font-sans;
+}
+
+@layer base {
+  h1, h2, h3, .heading {
+    /* Use theme() to reference Tailwind config without relying on a utility */
+    font-family: theme('fontFamily.display');
+  }
+}
+
+/* Card Style */
+.card {
+  @apply bg-white shadow-lg rounded-xl p-6 border border-slate-200;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply bg-[color:var(--primary)] text-white px-5 py-3 rounded-lg transition hover:opacity-90 shadow-sm;
+}
+
+.btn-outline {
+  @apply border border-slate-300 px-5 py-3 rounded-lg hover:bg-slate-100 transition;
+}
+
+/* Accent Button */
+.btn-accent {
+  @apply bg-[color:var(--secondary)] text-white px-5 py-3 rounded-lg transition hover:opacity-90 shadow-sm;
+}
+
+/* Input Fields */
+.input {
+  @apply w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none;
+}
+
+/* Glass panel utility */
+.glass {
+  @apply bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60;
+}
+
+/* Dark theme minimal overrides */
+.dark body { background-color: #0b1220; color: #e2e8f0; }
+.dark .card { background-color: #0f172a; border-color: #1f2937; color: #e5e7eb; }
+.dark .btn-primary { background-color: #7c3aed; color: #fff; }
+.dark .btn-accent { background-color: #f59e0b; color: #111827; }
+.dark .btn-outline { border-color: #334155; color: #e2e8f0; }
+.dark .btn-outline:hover { background: rgba(148,163,184,0.1); }
+.dark input.input, .dark textarea.input, .dark select.input { background-color: #0b1220; border-color: #334155; color: #e2e8f0; }
+.dark .glass { background-color: rgba(15,23,42,0.6); }
